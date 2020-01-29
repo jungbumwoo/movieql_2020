@@ -8,6 +8,27 @@ export const getByMovie = id => {
   return filteredMovie[0];
 }
 
+export const deletMovie = id => {
+  const deletMovie = movies.filter(movie => movie.id !== id);
+  if (movies.length > deletMovie.length) {
+    movies = deletMovie;
+    return true;
+  } else {
+    return false;
+  }
+}
+
+export const addMovie = (name, score) => {
+  const newMovie = {
+    id: `${movies.length +1}`,
+    name,
+    score
+  };
+  movies.push(newMovie);
+  return newMovie;
+}
+
+
 export const people = [
     {
         id: "0",
